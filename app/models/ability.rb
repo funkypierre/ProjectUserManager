@@ -11,8 +11,8 @@ class Ability
       end
 
       if user.has_role? :employee
-        can [:read, :create], Project, Contact
-        can [:update, :destroy], Project, Contact, active: true, user_id: user.id
+        can [:read, :create], [Project, Contact]
+        can [:update, :destroy], [Project, Contact], user_id: user.id
       end
 
       if user.has_role? :visitor
