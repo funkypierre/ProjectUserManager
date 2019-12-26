@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Les groupes sont définis par les rôles de la gem Rolify
 
-Things you may want to cover:
+Les groupes et permissions sont :
+* Admin :
+Peut tout faire
 
-* Ruby version
+* Employé :
+Peut lire et créer des projets et contacts. Modifier et supprimer des projets et contacts SI il est celui qui les a crée
 
-* System dependencies
+* Visiteur :
+Peut lire les projets
 
-* Configuration
+Les permissions sont gérées grâce à CanCanCan, elles sont définies dans le model ability.rb
 
-* Database creation
+# Pour tester le projet
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+git clone
+bundle install
+yarn install
+rails db:migrate
+bundle exec rspec --format documentation
+```
